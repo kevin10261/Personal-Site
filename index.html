@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><Select:disabled></Select:disabled>yu website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <h1 class = "logo">sYU</h1>
+                <ul id = "sidemenu">
+                    <li> <a href="#header">Home</a> </li>
+                    <li> <a href="#about">About</a> </li>
+                    <li> <a href="#services">Projects</a> </li>
+                    <li> <a href="#contact">Contact</a> </li>
+                    <img class = "fas" src="Assets/X.png" onClick = "closemenu()" alt="X">
+                </ul>
+                <img class = "fas" src="Assets/PinClipart.com_menu-clip-art_5328945.png" onClick = "openmenu()" alt="menu">
+            </nav>
+            <div class="header-text">
+                <p> Software Engineer</p>
+                <h1>Hello I'm <span>Seongeun</span><br>Yu From South Korea</h1>
+            </div>
+        </div>
+
+    </div>
+<!-- About Section -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="Assets/Kevin_Yu.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class = "sub-title"> About Me</h1>
+                    <p>Hello! My name is Seongeun Yu, 
+                        and I'm originally from South Korea. 
+                        Currently, I’m based in Canada, where 
+                        I've continued to explore my passion for 
+                        technology. I embarked on my programming 
+                        journey during my second year of university, 
+                        and since then, I've been dedicated to expanding 
+                        my skills and knowledge in the field. My experiences 
+                        have shaped me into a curious and enthusiastic 
+                        developer, eager to embrace new challenges and
+                         contribute to exciting projects.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id = "skills">
+                            <ul>
+                                <li><span>Web Development</span><br>Web app Development</li>
+                                <li><span>Business Software</span><br>Create Automated Integrations, and Manage Data  </li>
+                                <li><span>App developer</span><br>Building Android / iOS Apps</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id = "experience">
+                            <ul>
+                                <li><span>Jan - Sept 2024</span><br>Software Developer at Geoson Solutions Ltd. </li>
+                                <li><span>May - Sept 2023</span><br>Computer Techinician at Alberta Computers for School</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id = "education">
+                            <ul>
+                                <li><span>2021 - Present </span><br> University of Alberta: Bachelor Science in Software Engineering Co-op </li>
+                                <li><span>2018 - 2021</span><br> Harry Ainlay High School</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Services -->
+ <div id="services">
+    <div class="container">
+        <h1 class = "sub-title"> Projects </h1>
+        <div class="services-list">
+            <div>
+                <h2>Personal Website</h2>
+                <p> Website designed 
+                    to showcase my professional achievements, skills, and projects. 
+                    Built with HTML, CSS, and JavaScript, this website offers a dynamic and engaging way 
+                    to present your work and make a memorable impression on potential employers or clients.<span></span>
+                    </p>
+                    <a href="https://github.com/kevin10261" class="image-button">
+                        <img src="Assets/githubWhite.png" alt="Github Logo">
+                    </a>
+                    <a href="#"class = "image-button">
+                        <img src="Assets/websiteWhite.png" alt="Website Logo">
+                    </a>
+            </div>
+
+            <div>
+                <h2>Household Inventory App</h2>
+                <p>The Inventory Management App is a robust and intuitive solution 
+                    designed to streamline inventory tracking and management. Developed 
+                    using Java, this app leverages the latest advancements in Android 
+                    development to offer a powerful and user-friendly experience.<span></span></p>
+                      <a href="https://github.com/kevin10261" class="image-button">
+                        <img src="Assets/githubWhite.png" alt="Github Logo">
+                        </a>
+            </div>
+
+
+
+        </div>
+    </div>
+ </div>
+
+ <!-- Contact -->
+  <div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left"> 
+                <h1 class = "sub-title">Contact Me</h1>
+                <p>📫 Kyyse1026@gmail.com</p>
+                <p>📞 780-266-0163</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/kevin-yu1026/" class = "linkedin"> <img src="Assets/linkedin.png" alt="linkedin"></a>
+                    <a href="Assets/Kevin Yu - Resume Final.pdf" class = "resume"> <img src="Assets/resume.png" alt="resume"></a>
+                    <a href="https://github.com/kevin10261" class = "github"> <img src="Assets/githubWhite.png" alt="github"></a>
+                    
+
+                </div>
+            </div>
+            <div class="contact-right"> 
+                <form name="submit-to-google-sheet"> 
+                    <input type="text" name = "Name" placeholder="Your Name" required>
+                    <input type="email" name = "Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows = "6" placeholder="Your Message"></textarea>
+                    <button type = "submit" class = "btn btn2">Submit</button>
+                </form>
+                <span id = "msg"></span>
+            </div>
+        </div>
+
+    </div>
+
+  </div>
+    
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+
+<script>
+    var sidemenu = document.getElementById("sidemenu");
+    function openmenu(){
+        sidemenu.style.right = "0";
+    }
+    function closemenu(){
+        sidemenu.style.right = "-200px";
+    }
+</script>
+
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbym83yUoFPSYj3DSflgFH7V3xROO0gUquZfflexO9c4VabeA6ivqqIsKTlwRuhgRDuB/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message have been sent!"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+</html>
